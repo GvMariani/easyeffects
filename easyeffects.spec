@@ -2,7 +2,7 @@
 
 Summary:	Audio equalizer, filters and effects for PipeWire applications
 Name:	easyeffects
-Version:	8.2.2
+Version:	8.2.4
 Release:	1
 License:	GPLv3+
 Group:	Sound/Mixers

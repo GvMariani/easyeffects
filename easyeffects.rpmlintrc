@@ -1,0 +1,5 @@
+# A couple of libraries are needed but don't get required
+addFilter("E: explicit-lib-dependency")
+
+# If upstream does not provide a man page, there is nothing we can do
+addFilter("W: no-manual-page-for-binary")

@@ -1,13 +1,14 @@
-%global	_empty_manifest_terminate_build 0
+#global	_empty_manifest_terminate_build 0
 
 Summary:	Audio equalizer, filters and effects for PipeWire applications
 Name:	easyeffects
-Version:	8.2.4
+Version:	8.2.7
 Release:	1
 License:	GPLv3+
 Group:	Sound/Mixers
 Url:	https://github.com/wwmm/easyeffects
 Source0:	https://github.com/wwmm/easyeffects/archive/v%{version}/%{name}-%{version}.tar.gz
+Source100:	easyeffects.rpmlintrc
 BuildRequires:	breeze-icons
 BuildRequires:	cmake >= 3.28
 BuildRequires:	desktop-file-utils
@@ -29,11 +30,11 @@ BuildRequires:	cmake(KF6IconThemes)
 BuildRequires:	cmake(KF6Kirigami)
 BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	cmake(KF6QQC2DesktopStyle)
+BuildRequires:cmake(Qt6QuickShapesPrivate)
 BuildRequires:	boost-devel
 BuildRequires:	gomp-devel
 BuildRequires:	ladspa-devel
 BuildRequires:	libzita-convolver-devel
-BuildRequires:cmake(Qt6QuickShapesPrivate)
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(fmt)
 BuildRequires:	pkgconfig(gl)
@@ -92,9 +93,9 @@ Recommends:	zam-plugins-lv2
 Limiters, compressor, reverberation, high-pass filter, low pass filter,
 equalizer and auto volume effects for PipeWire applications.
 This application was formerly known as PulseEffects, but it was renamed to
-Easy Effects after it started to use GTK4 and GStreamer usage was replaced by
-native PipeWire filters. Now the whole application was ported from GTK4 to a
-combination of Qt, QML and KDE/Kirigami frameworks.
+Easy Effects after it started to use GTK4 and GStreamer and usage was replaced
+by native PipeWire filters. Now the whole application was ported from GTK4
+to a combination of Qt, QML and KDE/Kirigami frameworks.
 
 %files -f %{name}.lang
 %license LICENSE

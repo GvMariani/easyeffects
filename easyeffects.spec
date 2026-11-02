@@ -2,9 +2,9 @@
 
 Summary:	Audio equalizer, filters and effects for PipeWire applications
 Name:	easyeffects
-Version:	8.2.8
-Release:	2
-License:	GPLv3+
+Version:	8.3.1
+Release:	1
+License:	GPL-3.0-or-later
 Group:	Sound/Mixers
 Url:	https://github.com/wwmm/easyeffects
 Source0:	https://github.com/wwmm/easyeffects/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -17,6 +17,7 @@ BuildRequires:	gettext
 BuildRequires:	itstool
 #BuildRequires:	kf6-kirigami-addons-devel
 BuildRequires:	%{_lib}omp
+BuildRequires:	%{_lib}Qt6LabsStyleKit
 BuildRequires:	%{_lib}Qt6LabsSynchronizer
 BuildRequires:	%{_lib}tbbind
 BuildRequires:	libxml2-utils
@@ -49,7 +50,7 @@ BuildRequires:	pkgconfig(libportal-qt6)
 BuildRequires:	pkgconfig(lilv-0)
 BuildRequires:	pkgconfig(lv2) >= 1.18.2
 BuildRequires:	pkgconfig(nlohmann_json)
-BuildRequires:	pkgconfig(Qt6Core) >= 6.10.2
+BuildRequires:	pkgconfig(Qt6Core) >= 6.11.2
 BuildRequires:	pkgconfig(Qt6DBus)
 BuildRequires:	pkgconfig(Qt6Graphs)
 BuildRequires:	pkgconfig(Qt6Gui)
@@ -128,6 +129,9 @@ export LC_ALL="${LC_ALL:-UTF-8}"
 
 desktop-file-edit --add-category='X-OpenMandriva-CrossDesktop' \
 		%{buildroot}%{_datadir}/applications/com.github.wwmm.%{name}.desktop
+
+# Drop unknown locale
+rm -rf %{buildroot}%{_datadir}/locale/zh_Hant/*
 
 %find_lang %{name}
 #find_lang %%{name}-news
